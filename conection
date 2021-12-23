@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+  echo -e " Write what do you want do do on(power onn all conections)/off(power off all conections)"         ;
+  read answer;
+
+  case $answer in
+on)
+     sudo nmcli con up 'Wired connection 1'
+     sudo nmcli radio wifi on
+     sudo systemctl start bluetooth
+     sudo systemctl start ssh
+     sudo clear
+     ;;
+off)
+     sudo nmcli con down 'Wired connection 1'
+     sudo nmcli radio wifi off
+     sudo systemctl stop bluetooth
+     sudo systemctl stop ssh
+     sudo clear
+     ;;
+
+
+esac

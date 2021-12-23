@@ -1,0 +1,19 @@
+#!/bin/bash
+
+phone() {
+echo -e "You want to set/run?";
+read answer;
+case $answer in
+set|Set)
+  echo -e "You will need to enable usb debuging on phone.(the code will open an tutorial about this\n";
+  $(firefox https://developer.android.com/studio/debug/dev-options)
+  sudo apt-get install scrcpy
+  sudo apt install adb ffmpeg libsdl2-2.0-0 make gcc pkg-config meson ninja-build libavcodec-dev libavformat-dev libavutil-dev libsdl2-dev
+  sudo install scrcpy-server-v*.jar /usr/local/bin/scrcpy-server.jar
+  scrcpy
+run|Run)
+  scrcpy
+  adb devices
+  sleep 2
+  adb shell
+}

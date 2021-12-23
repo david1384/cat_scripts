@@ -1,0 +1,24 @@
+#!/bin/bash
+
+exe(){
+  echo -e "Wrte what you want to install 64b(64 bites app)/32b(32 bites app)?";
+  read answer;
+
+  case $answer in
+  64b|64) #Unlock statement
+     echo "You want to run 64 bites apps. Wrte the file location here(file location example ~/Downloads/example.exe):";
+     read location;
+     wine64 $location
+     ;;
+  32b|32) #Lock statement
+     echo "You want to run 32 bites apps. Wrte the file location here(file location example ~/Downloads/example.exe):";
+     read locations;
+     wine $location
+     
+     
+  esac	
+
+}
+
+exe
+

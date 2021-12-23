@@ -1,0 +1,41 @@
+#!/bin/bash
+
+minecraft() {
+  echo -e "You have runned this program before? yes/no\n";
+  echo -e "If you want to uninstall minecraft type: uninstall\n";
+  read answer
+
+  case $answer in
+  yes) #Yes statement
+     echo "Minecraft free runer started.";
+     sudo sed -i 's/1024/1536/g' /usr/bin/init-zram-swapping
+     echo -e "ADD";
+     $(firefox https://www.youtube.com/watch?v=Ck7kVCpIQFY&list=PLXKy1EZZJ_mSQaepVxWgxYhMIO0IjA7-T&index=18)
+     sudo java -jar TLauncher-2.83.jar
+     rm TLauncher-2.83.zip
+     ;;
+  no) #No statement
+     echo "Minecraft free installer started.\n";
+     cd ~/Downloads
+     sudo apt-get install openjdk-8-jdk
+     echo -e "A very important repostory will starg downloading in firefox.";
+     $(firefox https://tlauncher.org/jar)
+     cd ~/Downloads
+     unzip TLauncher-2.83.zip
+     echo "DO NOT DELETE THE TLauncher-2.83.jar FILE because is a very important repostory.";
+     sudo java -jar TLauncher-2.83.jar
+     ./mcreator.sh
+     ;;
+  uninstall) #Uninstall program
+     rm TLauncher-2.83.jar README-RUS.txt README-EN.txt
+     sudo dpkg --purge zramswap-enabler
+     sudo dpkg --purge zram-config
+     
+     
+     
+  esac	
+}
+
+minecraft 
+
+

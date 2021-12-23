@@ -1,0 +1,24 @@
+#!/bin/bash
+ 
+ echo "Tracker started enter an option(p for phone number/i for ip adress)";
+ read option;
+ 
+   case $option in
+      p) # phone number
+         echo "Send the following link to the phone number.";
+         ./TrackUrl.sh
+         git clone https://github.com/cryptomarauder/TrackUrl.git
+         chmod -R 755 TrackUrl
+         cd TrackUrl
+         ./TrackUrl.sh
+         exit;;
+      i) # ip adress
+         echo "Enter target ip here" ;
+         ./ip2geolocation.py
+         apt-get install python3-setuptools
+         easy_install3 pip
+         pip3 install -r requirements.txt
+         git clone https://github.com/maldevel/IPGeoLocation
+         pip3 install -r requirements.txt --user
+         exit;;
+   esac

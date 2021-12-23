@@ -1,0 +1,22 @@
+#!/bin/bash
+
+download(){
+  echo -e "Wrte what you want to install on phone or android vm: magic_rampage/happymod/brawl_stars?";
+  read answer;
+
+  case $answer in
+  magic_rampage|Magic_rampage) #Unlock statement
+     echo "Magic rampage selected";
+     $(firefox https://www.youtube.com/watch?v=WtjgznBnb0c)
+     ;;
+  happymod|Happymod) #Lock statement
+     echo "Happymod selected";
+     $(firefox https://happymod.com/)
+  brawl_stars|Brawl_stars)
+     $(firefox https://rebrawl.gg/mods/download/2021-12-03/)
+     
+  esac	
+
+}
+
+download

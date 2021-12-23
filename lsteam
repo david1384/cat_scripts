@@ -1,0 +1,20 @@
+#!/bin/bash
+
+lsteam(){
+  echo -e "Wrte what you want to run lutris(a linux steam)/xenia(xbox 360 games)?";
+  read answer;
+
+  case $answer in
+  lutris|Lutris) #Unlock statement
+     echo "Lutris(a linux steam) runner started";
+     $(firefox lutris.net)
+     ;;
+  xenia|Xenia) #Lock statement
+     echo "This is xenia linux installing tutorial";
+     $(firefox https://youtu.be/qZbw9nsG2Yo)
+     
+  esac	
+
+}
+
+lsteam

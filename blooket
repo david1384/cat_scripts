@@ -1,0 +1,21 @@
+#!/bin/bash
+
+blooket() {
+  echo -e "You want to install run BLOOKET scripts on your computer??";
+  read answer;
+
+  case $answer in
+  yes|y) #Unlock statement
+     echo "To execute the scripts who will open just press Ctrl+Shift+C and after this select console and press Ctrl+Shift+V";
+     $(firefox https://schoolcheats.net/blooket/)
+     ;;
+  no|n) #Lock statement
+     echo "Bye bye.";
+     
+     
+  esac	
+}
+
+installer
+
+

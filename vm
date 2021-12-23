@@ -1,0 +1,46 @@
+#!/bin/bash
+
+vm() {
+  echo -e "What vm you want to install windows(windows virtual machine)/mac(macintos virtual machine)/android(android virtual machine)?";
+  read answer;
+  
+  sudo apt-get install git
+
+  case $answer in
+  windows|Windows) #Unlock statement
+     $(firefox https://software-download.microsoft.com/db/Win10_21H2_EnglishInternational_x64.iso?t=cf90df54-7316-4db9-97fb-b50e09bac4a8&e=1637596589&h=ea3bb1a6b42c75fe76c7cb113315b647)
+     sudo apt install qemu-kvm bridge-utils virt-manager libosinfo-bin -y
+     echo -e "You will need to set-up the vm with the downloaded img.";
+     virt-manager
+     
+     ;;
+  mac|Mac) #Lock statement
+     echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs
+     sudo cp kvm.conf /etc/modprobe.d/kvm.conf  
+     sudo apt-get install qemu uml-utilities virt-manager git \
+     wget libguestfs-tools p7zip-full make -y
+     sudo usermod -aG kvm $USER
+     sudo usermod -aG libvirt $ USER
+     cd ~
+     git clone --depth 1 --recursive https://github.com/kholia/OSX-KVM.git
+     cd OSX-KVM
+     git pull --rebase
+     sudo apt-get install -y qemu-block-extra
+     ./fetch-macOS-v2.py
+     qemu-img convert BaseSystem.dmg -O raw BaseSystem.img
+     qemu-img create -f qcow2 mac_hdd_ng.img 128G
+     ./OpenCore-Boot.sh
+     
+  android|Android)
+     
+     genymotion
+     
+     echo "Bye bye.";
+     
+     
+  esac	
+}
+
+vm
+
+

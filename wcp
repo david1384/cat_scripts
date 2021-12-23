@@ -1,0 +1,11 @@
+#!/bin/bash
+
+wcp() {
+  echo -e "This is Windows Command Promp runner for linux.Press CTRL+D to exit";
+  cd ~/.wine/drive_c/windows/system32
+  wine cmd.exe
+}
+
+wcp
+
+

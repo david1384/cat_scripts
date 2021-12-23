@@ -1,0 +1,25 @@
+#!/bin/bash
+
+sus() {
+  echo -e "You want to install Among Us game files y/n?";
+  read answer;
+
+  case $answer in
+  yes|y) #Unlock statement
+     echo -e "This code will only download Among.Us.v2021.11.9.2s.zip you need to decompress the zip with password 'steamunlocked' and set up it.(a tutorial about this will open)";
+     $(firefox https://uploadhaven.com/download/d7e2db61cf8c327984cff0ac1b7b1581)
+     echo "The install tutorial will open.";
+     $(firefox https://www.youtube.com/watch?v=hLuNCrpj85w)
+     lutris
+     
+     ;;
+  no|n) #Lock statement
+     echo "Bye bye.";
+     
+     
+  esac	
+}
+
+sus
+
+
