@@ -24,19 +24,19 @@ installer() {
      sudo apt-get install adb
      sudo apt-key adv --keyserver pool.sks-keyservers.net --recv-keys ED444FF07D8D0BF6
      sudo echo '# Kali linux repositories | Added by Cat_scripts\ndeb http://http.kali.org/kali kali-rolling main contrib non-free' >> /etc/apt/sources.list
-     chmod +x ~/Downloads/cat_scripts/apk
-     chmod +x ~/Downloads/cat_scripts/cats
-     chmod +x ~/Downloads/cat_scripts/wcp
-     chmod +x ~/Downloads/cat_scripts/xp
-     chmod +x ~/Downloads/cat_scripts/conection
-     chmod +x ~/Downloads/cat_scripts/download
-     chmod +x ~/Downloads/cat_scripts/exe
-     chmod +x ~/Downloads/cat_scripts/lsteam
-     chmod +x ~/Downloads/cat_scripts/minecraft
-     chmod +x ~/Downloads/cat_scripts/roblox
-     chmod +x ~/Downloads/cat_scripts/track
-     chmod +x ~/Downloads/cat_scripts/vm
-     chmod +x ~/Downloads/cat_scripts/sus
+     chmod +x ~/Downloads/apk
+     chmod +x ~/Downloads/cats
+     chmod +x ~/Downloads/wcp
+     chmod +x ~/Downloads/xp
+     chmod +x ~/Downloads/conection
+     chmod +x ~/Downloads/download
+     chmod +x ~/Downloads/exe
+     chmod +x ~/Downloads/lsteam
+     chmod +x ~/Downloads/minecraft
+     chmod +x ~/Downloads/roblox
+     chmod +x ~/Downloads/track
+     chmod +x ~/Downloads/vm
+     chmod +x ~/Downloads/sus
      cd ~/
      sudo echo 'export PATH=$PATH:~/Downloads/cat_scripts' >> ~/.bashrc
      sudo echo 'export PATH=$PATH:~/Downloads/{Genymotion_install_path}/genymotion' >> ~/.bashrc
