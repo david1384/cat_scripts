@@ -10,3 +10,7 @@ git clone https://github.com/david1384/cat_scripts.git
 cd ~/cat_scripts
 
 sudo bash installer.sh
+
+If you want to see what are doing all commands plese execute:
+
+cats -h
