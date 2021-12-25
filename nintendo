@@ -1,0 +1,11 @@
+#!/bin/bash
+
+nintendo() {
+  echo -e "The emulator app is named yuzu?";
+  sudo apt-get install snapd
+  sudo snap install yuzu
+}
+
+nintendo
+
+
